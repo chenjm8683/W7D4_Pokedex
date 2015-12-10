@@ -1,5 +1,7 @@
 var React = require('react');
 var PokemonStore = require('../../stores/pokemon.js');
+var ApiUtil = require('../../util/apiUtil.js');
+
 var PokemonDetail = React.createClass({
 
   getInitialState: function() {
@@ -25,15 +27,15 @@ var PokemonDetail = React.createClass({
   },
 
   componentWillReceiveProps: function(newProps) {
-    var newPokemon = PokemonStore.find(parseInt(newProps.params.pokemonId));
-    this.setState({
-      pokemon: newPokemon
-    });
+    // console.log(this.state.pokemon);
+    // why being called twice?
+    ApiUtil.fetchSinglePokemon(newProps.params.pokemonId);
   },
 
 
 
   render: function() {
+
     var pokemon = this.state.pokemon;
     var pokemonDetails = "";
     if (typeof this.state.pokemon !== 'undefined'){

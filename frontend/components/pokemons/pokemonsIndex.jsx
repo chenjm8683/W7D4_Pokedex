@@ -4,6 +4,7 @@ var ApiUtil = require('../../util/apiUtil.js');
 var PokemonIndexItem = require('./pokemonIndexItem.jsx');
 
 var PokemonsIndex = React.createClass({
+
   getInitialState: function() {
     return {
       pokemons: PokemonStore.all()
@@ -26,10 +27,9 @@ var PokemonsIndex = React.createClass({
   },
 
   render: function() {
-    console.log(this.state.pokemons);
     var pokemonsLi = this.state.pokemons.map(function(pokemon) {
       return (
-        <li key={pokemon.id}>
+        <li key={pokemon.id} >
           <PokemonIndexItem  pokemon={pokemon}  />
         </li>
       )
