@@ -9,6 +9,12 @@ PokemonStore.all = function() {
   return _pokemons.slice();
 };
 
+PokemonStore.find = function(id) {
+  return _pokemons.find(function(pokemon) {
+    return pokemon.id === id;
+  });
+};
+
 PokemonStore.resetPokemons = function(pokemons) {
   _pokemons = pokemons;
   PokemonStore.__emitChange();
