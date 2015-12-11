@@ -92,6 +92,10 @@ ul {
   cursor: pointer;
   list-style: none;
 }
+.toy-list-item {
+  float: left;
+  min-width: 200px;
+}
 
 .poke-list-item:hover, .toy-list-item:hover {
   background-color: tomato;

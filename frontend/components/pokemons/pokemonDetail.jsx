@@ -1,6 +1,7 @@
 var React = require('react');
 var PokemonStore = require('../../stores/pokemon.js');
 var ApiUtil = require('../../util/apiUtil.js');
+var ToysIndex = require('../toys/toysIndex.jsx');
 
 var PokemonDetail = React.createClass({
 
@@ -44,7 +45,8 @@ var PokemonDetail = React.createClass({
           <h3>{pokemon.name}</h3>
           <p>{"id: " + pokemon.id}</p>
           <p>{"Type: "+ pokemon.poke_type}</p>
-          <img src={pokemon.image_url}></img>
+          <p><img src={pokemon.image_url}></img></p>
+          <ToysIndex toys={pokemon.toys} />
         </div>
       )
     }
@@ -55,6 +57,7 @@ var PokemonDetail = React.createClass({
             {pokemonDetails}
           </div>
         </div>
+        {this.props.children}
       </div>
     );
   }

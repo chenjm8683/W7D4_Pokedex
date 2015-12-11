@@ -7,10 +7,14 @@ var Router = require('react-router').Router;
 var Route = require('react-router').Route;
 var App = require('./components/app.jsx');
 var PokemonDetail = require('./components/pokemons/pokemonDetail.jsx');
+var ToyDetail = require('./components/toys/toyDetail.jsx')
 
 var routes = (
   <Route path="/" component={App}>
-    <Route path="pokemon/:pokemonId" component={PokemonDetail}></Route>
+    <Route path="pokemon/:pokemonId" component={PokemonDetail}>
+      <Route path="toys/:toyId" component={ToyDetail}></Route>
+    </Route>
+
   </Route>
 );
 

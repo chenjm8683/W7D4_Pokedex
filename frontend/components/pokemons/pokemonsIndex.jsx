@@ -29,9 +29,7 @@ var PokemonsIndex = React.createClass({
   render: function() {
     var pokemonsLi = this.state.pokemons.map(function(pokemon) {
       return (
-        <li key={pokemon.id} >
-          <PokemonIndexItem  pokemon={pokemon}  />
-        </li>
+          <PokemonIndexItem key={pokemon.id} pokemon={pokemon}  />
       )
     });
     return (

@@ -13,9 +13,9 @@ var PokemonIndexItem = React.createClass({
   render: function() {
 
     return (
-      <div className="poke-list-item" onClick={this.showDetail} >
+      <li className="poke-list-item" onClick={this.showDetail} >
         {this.props.pokemon.name + ", " + this.props.pokemon.poke_type}
-      </div>
+      </li>
     );
   }
 
