@@ -11,6 +11,10 @@ var ApiUtil = {
     $.get('api/pokemon/' + id, {}, function(pokemon){
       ApiActions.receiveSinglePokemon(pokemon);
     });
+  },
+
+  createPokemon: function(e) {
+    console.log(e);
   }
 };
 

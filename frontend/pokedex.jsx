@@ -14,9 +14,10 @@ var routes = (
     <Route path="pokemon/:pokemonId" component={PokemonDetail}>
       <Route path="toys/:toyId" component={ToyDetail}></Route>
     </Route>
-
   </Route>
 );
+
+window.PokemonStore = require('./stores/pokemon.js');
 
 
 
